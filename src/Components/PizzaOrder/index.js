@@ -1,12 +1,26 @@
-import { useState } from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 const PizzaOrder = () => {
+
+  //unwanted code start
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      // ...
+    }
+    fetchData();
+  }, []);
+  //unwanted code end
+  
+
   const [formData, setFormData] = useState({
     people: "",
     pieces: "",
   });
   
-  //test comment
+  //test comment 123
   const { people, pieces } = formData;
 
   const pizzaDetails = [
